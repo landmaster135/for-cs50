@@ -1,0 +1,44 @@
+body {
+    background-color: #f0f8ff;
+    text-align: center;
+}
+h1 {
+    /*setting top of margin*/
+    margin-top: 50px;
+}
+input[type="text"]{
+    height: 20px;
+}
+.button{
+    /*setting margins of top and bottom to 10px*/
+    /*and those of left and right to 20px*/
+    margin: 10px 20px;
+    /* erasing frame lines */
+    border-style:none;
+    /* setting width to 200px */
+    width: 200px;
+    /* setting margins of top and bottom to 10px in the button */
+    padding: 10px;
+    /* setting letter color to white */
+    color: white;
+    /* setting letter size to 15px */
+    font-size: 15px;
+    /* setting letter bolder */
+    font-weight: bold;
+}
+.button-1st{
+    /*setting button color to pink*/
+    background-color: pink;
+}
+.button-2nd{
+    /*setting button color to blue*/
+    background-color: blue;
+}
+.button-3rd{
+    /*setting button color to green*/
+    background-color: green;
+}
+#test{
+    /* setting letter color to red */
+    color: red;
+}
