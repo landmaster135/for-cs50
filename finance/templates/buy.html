@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Buy Stock
+    </h1>
+    <div>
+        <h5>
+            Cash Amount : {{ cash }}
+        </h5>
+    </div>
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="stocksymbol" placeholder="Stock_Symbol" type="text" required>
+            <div class="invalid-feedback">
+                Please provide a valid stocksymbol.
+            </div>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="numstock" placeholder="Numstock" type="text" required>
+            <div class="invalid-feedback">
+                Please provide number of stock.
+            </div>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="addcash" placeholder="Add_Cash_Value" type="text" required>
+            <div class="invalid-feedback">
+                Please provide cash value.
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

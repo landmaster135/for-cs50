@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h1>
+        {{ username }}'s Trading History
+    </h1>
+    <table class="table">
+        <thead>
+            <th>
+                <!-- 取引区分 -->
+                Trading Category
+            </th>
+            <th>
+                <!-- 銘柄記号 -->
+                Stock Symbol
+            </th>
+            <th>
+                <!-- 所有株式 -->
+                Stock Name
+            </th>
+            <th>
+                <!-- 売買株式数 -->
+                Number of Stocks
+            </th>
+            <th>
+                <!-- 売買価格 -->
+                Trading Price
+            </th>
+            <th>
+                <!-- 取引日時 -->
+                Trading Date
+            </th>
+        </thead>
+        <tbody>
+            {% for a in histories %}
+                <tr>
+                    <td>
+                        <!-- 取引区分 -->
+                        {{ a.tradingcategory }}
+                    </td>
+                    <td>
+                        <!-- 銘柄記号 -->
+                        {{ a.stocksymbol }}
+                    </td>
+                    <td>
+                        <!-- 所有株式 -->
+                        {{ a.stockname }}
+                    </td>
+                    <td>
+                        <!-- 売買株式数 -->
+                        {{ a.numstock }}
+                    </td>
+                    <td>
+                        <!-- 売買価格 -->
+                        {{ a.price }}
+                    </td>
+                    <td>
+                        <!-- 取引日時 -->
+                        {{ a.date_time }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

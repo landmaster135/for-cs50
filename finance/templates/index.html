@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h1>
+            {{ username }}'s Portfolio
+        </h1>
+    </div>
+    <div>
+        <h5>
+            Cash Amount : {{ cash }}
+        </h5>
+    </div>
+
+    <table class="table">
+        <thead>
+            <th>
+                <!-- 所有株式 -->
+                Stock Name
+            </th>
+            <th>
+                <!-- 株式数 -->
+                Number of Stocks
+            </th>
+            <th>
+                <!-- 現在の価格 -->
+                Current Price
+            </th>
+            <th>
+                <!-- 各保有額の合計 -->
+                Total Amount
+            </th>
+        </thead>
+        <tbody>
+            {% for a in stocks %}
+                <tr>
+                    <td>
+                        <!-- 所有株式 -->
+                        {{ a.stockname }}
+                    </td>
+                    <td>
+                        <!-- 株式数 -->
+                        {{ a.numstock }}
+                    </td>
+                    <td>
+                        <!-- 現在の価格 -->
+                        {{ '%0.2f' | format(a.price) }}
+                    </td>
+                    <td>
+                        <!-- 各保有額の合計 -->
+                        {{ a.totalamount }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

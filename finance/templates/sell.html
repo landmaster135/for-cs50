@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Sell Stock
+    </h1>
+    <div>
+        <h5>
+            Cash Amount : {{ cash }}
+        </h5>
+    </div>
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <select autofocus class="form-control" name="stocksymbol" required>
+                <option style="display: none;">Select symbol</option>
+                {% for symbol in symbols %}
+                    <option>{{ symbol }}</option>
+                {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+                Please provide a valid stocksymbol.
+            </div>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="numstock" placeholder="Numstock" type="text" required>
+            <div class="invalid-feedback">
+                Please provide stock_amount.
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
